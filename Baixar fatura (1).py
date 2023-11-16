@@ -84,13 +84,13 @@ def find(browser, data, uc, cnpj, senha, Destino):
 print('Verifique se já mudou a data no arquivo excel!')
 data = str(input('Qual a data da fatura você deseja? '))
 comeco = int(input('Por qual você quer começar? 2 de diferença, Ex: Quer o numero 20 então coloca 18: '))
-nome_aba='Planilha2'
+nome_aba='Livre'
 caminho_origem = 'S:'
 nome_planilha = '\Base Baixar Faturas.xlsx'
 df=pd.read_excel(caminho_origem+nome_planilha,nome_aba)
 browser = access()
 wb = load_workbook('Base Baixar Faturas.xlsx')
-ws = wb['Planilha2']
+ws = wb['Livre']
 hoje = datetime.date.today()
 
 for i in df.index:
@@ -106,19 +106,6 @@ for i in df.index:
 browser.quit()
 
 
-# In[ ]:
-
-
-
-
-
-# In[8]:
-
-
-get_ipython().system('pip install pynput')
-
-
-# In[ ]:
 
 
 
